@@ -39,6 +39,22 @@ Sou de Belém, Pará. Atualmente, cursando **Ciência da Computação** e busco 
   </tr>
 </table>
 
+<table width="100%">
+  <tr>
+    <td width="70%">
+      <h3>Duck Manager</h3>
+      <p>
+        Sistema desktop completo para gestão de pedidos e produtos, desenvolvido em 2024 como parte das iniciativas do grupo the heapsters. Uma solução robusta que combina tecnologias modernas com a confiabilidade do Java.
+      </p>
+    </td>
+    <td align="center">
+      <a href="https://github.com/theheapsters/duck-manager">
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=theheapsters&repo=calop-agender&theme=tokyonight" alt="Card do Repositório Calop Agender">
+      </a>
+    </td>
+  </tr>
+</table>
+
 ---
 
 ### 🛠️ Linguagens e Ferramentas
