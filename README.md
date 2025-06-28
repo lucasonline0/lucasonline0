@@ -49,7 +49,7 @@ Sou de Belém, Pará. Atualmente, cursando **Ciência da Computação** e busco 
     </td>
     <td align="center">
       <a href="https://github.com/theheapsters/duck-manager">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=theheapsters&repo=calop-agender&theme=tokyonight" alt="Card do Repositório Calop Agender">
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=theheapsters&repo=duck-manager&theme=tokyonight" alt="Card do Repositório Duck Manager">
       </a>
     </td>
   </tr>
