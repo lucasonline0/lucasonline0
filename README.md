@@ -1,8 +1,6 @@
+## Hello, I'm Lucas Andrade! 👋
 
-
-## Olá, eu sou o Lucas Andrade! 👋
-
-**`Desenvolvedor FullStack`** apaixonado por criar soluções inovadoras e eficientes através da tecnologia.
+**`FullStack Developer`** passionate about creating innovative and efficient solutions through technology.
 
 <div align="center">
   <a href="https://github.com/lucasonline0">
@@ -12,28 +10,28 @@
     
 ---
 
-### 👨🏻‍💻 Sobre Mim
+### 👨🏻‍💻 About Me
 
-Sou de Belém, Pará. Atualmente, cursando **Ciência da Computação** e busco constantemente estudar mais para crescer como desenvolvedor. 
+I'm from Belém, Pará. Currently, I'm pursuing a degree in **Computer Science** and I'm constantly seeking to learn more to grow as a developer.
 
-- 🎓 Cursando **Ciência da Computação**
-- 💡 Aberto a colaborações em projetos e novas oportunidades de aprendizado.
+- 🎓 Studying **Computer Science**
+- 💡 Open to collaborations on projects and new learning opportunities.
 
 ---
 
-### 🚀 Projeto em Destaque
+### 🚀 Featured Project
 
 <table width="100%">
   <tr>
     <td width="70%">
       <h3>Calop Agender</h3>
       <p>
-        Uma aplicação Full-Stack para agendamento e gerenciamento de serviços em salões de beleza, barbearias e clínicas de estética. O objetivo é otimizar o fluxo de clientes e facilitar a administração do negócio de forma simples e eficaz.
+        A Full-Stack application for scheduling and managing services at beauty salons, barber shops, and aesthetic clinics. The goal is to optimize customer flow and simplify business administration in a simple and effective way.
       </p>
     </td>
     <td align="center">
       <a href="https://github.com/theheapsters/calop-agender">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=theheapsters&repo=calop-agender&theme=tokyonight" alt="Card do Repositório Calop Agender">
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=theheapsters&repo=calop-agender&theme=tokyonight" alt="Calop Agender Repository Card">
       </a>
     </td>
   </tr>
@@ -44,12 +42,12 @@ Sou de Belém, Pará. Atualmente, cursando **Ciência da Computação** e busco 
     <td width="70%">
       <h3>Duck Manager</h3>
       <p>
-        Sistema desktop completo para gestão de pedidos e produtos, desenvolvido em 2024 como parte das iniciativas do grupo the heapsters. Uma solução robusta que combina tecnologias modernas com a confiabilidade do Java.
+        A complete desktop system for order and product management, developed in 2024 as part of the heapsters group initiatives. A robust solution that combines modern technologies with the reliability of Java.
       </p>
     </td>
     <td align="center">
       <a href="https://github.com/theheapsters/duck-manager">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=theheapsters&repo=duck-manager&theme=tokyonight" alt="Card do Repositório Duck Manager">
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=theheapsters&repo=duck-manager&theme=tokyonight" alt="Duck Manager Repository Card">
       </a>
     </td>
   </tr>
@@ -57,9 +55,9 @@ Sou de Belém, Pará. Atualmente, cursando **Ciência da Computação** e busco 
 
 ---
 
-### 🛠️ Linguagens e Ferramentas
+### 🛠️ Languages and Tools
 
-Minhas principais ferramentas de trabalho e estudo.
+My main tools for work and study.
 
 <p align="center">
   <a href="https://skillicons.dev">
@@ -69,7 +67,7 @@ Minhas principais ferramentas de trabalho e estudo.
 
 ---
 
-### 📫 Conecte-se Comigo
+### 📫 Connect with Me
 
 <p align="center">
   <a href="https://www.linkedin.com/in/lucasblackstar/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
