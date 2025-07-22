@@ -30,7 +30,7 @@ I'm from Belém, Pará. Currently, I'm pursuing a degree in **Computer Science**
       </p>
     </td>
     <td align="center">
-      <a href="https://github.com/theheapsters/calop-agender">
+      <a href="https://github.com/amazonext/calop-agender">
         <img src="https://github-readme-stats.vercel.app/api/pin/?username=amazonext&repo=calop-agender&theme=tokyonight" alt="Calop Agender Repository Card">
       </a>
     </td>
@@ -62,7 +62,7 @@ I'm from Belém, Pará. Currently, I'm pursuing a degree in **Computer Science**
       </p>
     </td>
     <td align="center">
-      <a href="https://github.com/theheapsters/duck-manager">
+      <a href="https://github.com/amazonext/duck-manager">
         <img src="https://github-readme-stats.vercel.app/api/pin/?username=amazonext&repo=duck-manager&theme=tokyonight" alt="Duck Manager Repository Card">
       </a>
     </td>
