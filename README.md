@@ -1,4 +1,4 @@
-## Hello, I'm Lucas Andrade! 👋
+## Hello, I'm Lucas Madureira! 👋
 
 **`FullStack Developer`** passionate about creating innovative and efficient solutions through technology.
 
