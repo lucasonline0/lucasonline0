@@ -1,13 +1,16 @@
-
 # GitHub Action for generating a contribution graph with a snake eating your contributions
 name: Generate Snake
 
+# Esta seção é ESSENCIAL para a Action funcionar
+permissions:
+  contents: write
+
 on:
   schedule:
-    # run automatically every 6 hours
+    # roda automaticamente a cada 6 horas
     - cron: "0 */6 * * *"
   
-  # allows to manually run the workflow
+  # permite rodar manualmente pela aba Actions
   workflow_dispatch:
 
 jobs:
@@ -18,10 +21,8 @@ jobs:
       
       - uses: Platane/snk@v3
         with:
-          # github user name to get the contributions from
           github_user_name: ${{ github.repository_owner }}
           
-          # list of files to generate
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
