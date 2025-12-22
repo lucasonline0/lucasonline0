@@ -45,34 +45,3 @@
   <h3>💀 Security & OS</h3>
   <img src="https://skillicons.dev/icons?i=arch,linux,kali,bash,vim,git,grafana&theme=dark" alt="Security" />
 </div>
-
-<br />
-
-<div align="center" style="padding: 20px;">
-  <div
-    style="
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 18px 22px;
-      border-radius: 18px;
-      background: radial-gradient(circle at top left, rgba(0, 255, 255, 0.25), transparent 55%),
-                  radial-gradient(circle at bottom right, rgba(140, 82, 255, 0.30), transparent 55%),
-                  rgba(10, 10, 25, 0.75);
-      box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.65),
-        0 0 0 1px rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-    "
-  >
-    <h3 style="margin: 0 0 16px 0; color: #e5e7eb; font-weight: 600;">
-      📊 GitHub Metrics
-    </h3>
-    <img
-      src="https://metrics.lecoq.io/lucasonline0?template=classic&base=transparent&config.timezone=America%2FSao_Paulo&languages=1"
-      alt="GitHub Metrics"
-      style="width: 100%; border-radius: 14px;"
-    />
-  </div>
-</div>
