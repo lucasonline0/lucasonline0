@@ -1,47 +1,48 @@
 <div align="center">
-  <h1>Lucas Madureira</h1>
-  <p>
-    <strong>Software Engineer | Security Researcher</strong><br/>
-    Arch Linux User 🐧 | Multi-language Developer
+  <img src="https://capsule-render.vercel.app/render?type=soft&color=auto&height=200&section=header&text=Lucas%20Madureira&fontSize=70&animation=fadeIn" width="100%" />
+
+  <p align="center">
+    <strong>Security Engineer | Systems Programming | Cloud Security</strong>
   </p>
 
-  <p>
-    <a href="https://www.linkedin.com/in/lucasblackstar/">
-      <img src="https://skillicons.dev/icons?i=linkedin&theme=dark" height="30" alt="linkedin"/>
-    </a>
-    <a href="mailto:jlmadureira90@gmail.com">
-      <img src="https://skillicons.dev/icons?i=gmail&theme=dark" height="30" alt="gmail"/>
-    </a>
-    <a href="https://github.com/amazonext">
-      <img src="https://skillicons.dev/icons?i=github&theme=dark" height="30" alt="github"/>
-    </a>
+  <p align="center">
+    <a href="https://www.linkedin.com/in/lucasblackstar/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+    <a href="mailto:jmadureira00@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
   </p>
 </div>
 
-<br />
+---
+
+### 🛠️ Tech Stack
 
 <div align="center">
-  <h3>🧬 Programming Languages</h3>
-  <img src="https://skillicons.dev/icons?i=c,cpp,cs,go,java,js,lua,php,python,ruby,rust,solidity,ts&theme=dark&perline=13" alt="Languages" />
+  <img src="https://skillicons.dev/icons?i=rust,go,cpp,bash,linux,arch,kali,docker,kubernetes,terraform,aws,nginx,postgres,redis,kafka,ts,react,nextjs&theme=dark" />
 </div>
 
-<br />
+---
+
+### 📊 GitHub Stats
 
 <div align="center">
-  <h3>🛡️ Backend & Cloud Native</h3>
-  <img src="https://skillicons.dev/icons?i=nodejs,nestjs,postgres,redis,mongodb,mysql,kafka,docker,kubernetes,terraform,aws,nginx&theme=dark&perline=12" alt="Backend" />
+  <img src="https://github-readme-stats.vercel.app/api?username=lucasonline0&show_icons=true&theme=dark&hide_border=true&bg_color=0D1117" height="180em" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=lucasonline0&layout=compact&theme=dark&hide_border=true&bg_color=0D1117" height="180em" />
 </div>
 
-<br />
-
 <div align="center">
-  <h3>💻 Frontend Ecosystem</h3>
-  <img src="https://skillicons.dev/icons?i=react,nextjs,vue,tailwind,vite,html,css&theme=dark" alt="Frontend" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lucasonline0&theme=dark" width="100%" />
 </div>
 
-<br />
+---
+
+### 🛡️ Top Projects
+
+| Project | Description | Stack |
+| :--- | :--- | :--- |
+| **[WAF-Proxy](https://github.com/lucasonline0/waf-proxy)** | Defensive Engine | `Rust` `Lua` |
+| **[GoSpector](https://github.com/lucasonline0/gospector)** | Reconnaissance CLI | `Go` |
+
+---
 
 <div align="center">
-  <h3>💀 Security & OS</h3>
-  <img src="https://skillicons.dev/icons?i=arch,linux,kali,bash,vim,git,grafana&theme=dark" alt="Security" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=lucasonline0&theme=github-compact&bg_color=0D1117&hide_border=true&color=6366f1" width="100%" />
 </div>
