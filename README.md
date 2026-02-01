@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/render?type=soft&color=auto&height=200&section=header&text=Lucas%20Madureira&fontSize=70&animation=fadeIn" width="100%" />
 
   <p align="center">
     <strong>Security Engineer | Systems Programming | Cloud Security</strong>
@@ -31,15 +30,6 @@
 <div align="center">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lucasonline0&theme=dark" width="100%" />
 </div>
-
----
-
-### 🛡️ Top Projects
-
-| Project | Description | Stack |
-| :--- | :--- | :--- |
-| **[WAF-Proxy](https://github.com/lucasonline0/waf-proxy)** | Defensive Engine | `Rust` `Lua` |
-| **[GoSpector](https://github.com/lucasonline0/gospector)** | Reconnaissance CLI | `Go` |
 
 ---
 
