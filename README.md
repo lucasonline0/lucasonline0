@@ -23,11 +23,6 @@
 ### 📊 GitHub Stats
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=lucasonline0&show_icons=true&theme=dark&hide_border=true&bg_color=0D1117" height="180em" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=lucasonline0&layout=compact&theme=dark&hide_border=true&bg_color=0D1117" height="180em" />
-</div>
-
-<div align="center">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lucasonline0&theme=dark" width="100%" />
 </div>
 
