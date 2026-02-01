@@ -1,7 +1,7 @@
 <div align="center">
 
   <p align="center">
-    <strong>Security Engineer | Systems Programming | Cloud Security</strong>
+    <strong>Security Engineer | Systems Programming | Cloud Security | Founder of @amazonext </strong>
   </p>
 
   <p align="center">
