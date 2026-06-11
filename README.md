@@ -1,23 +1,22 @@
-<table border="0" cellpadding="0" cellspacing="0">
-<tr>
-<td width="33%" valign="top" style="padding: 0;">
-  <img src="./image.jpeg" width="100%" />
-</td>
-<td width="67%" valign="top" style="padding: 20px 0 0 28px;">
+# hey, i'm lucas
 
-**lucas madureira**  
-computer science student · software developer · security enthusiast
+full-stack developer @ **seduc-pa**, building production government systems.
+b.sc. computer science (in progress) — focused on type-safe architecture & secure systems design.
 
-dev working with typescript, react and next.js — building full-stack applications focused on performance and clean architecture. transitioning into cybersecurity, with focus on the offensive side, cloud hardening and secure systems design. founder of [@amazonext](https://github.com/amazonext), where i build and ship real products.
+### stack
 
-i got into programming because i wanted to understand how things work under the hood. now i want to understand how they break. currently treating both as the same discipline — you can't secure what you don't understand.
+<p>
+  <img src="https://skillicons.dev/icons?i=ts,go,rust,python,nestjs,nextjs,prisma,postgres,docker,linux" />
+</p>
 
-— stack: typescript · react · next.js · node.js · python · bash · linux · docker · aws · postgresql  
-— focus: offensive security · tryhackme · hackthebox · aws security · iam hardening · rust · systems programming  
-— certs: introduction to the threat landscape 3.0 (fortinet, 2026) · introduction to cybersecurity (cisco, 2026)
+### projects
 
-[linkedin](https://www.linkedin.com/in/lucasblackstar/) · [gmail](mailto:jmadureira00@gmail.com)
+**gospector** — go recon toolkit using certificate transparency<br>
+**waf-proxy** — rust reverse proxy with a lua-based waf engine (sqli/xss detection)
 
-</td>
-</tr>
-</table>
+### certifications
+
+threat landscape 3.0 — **fortinet** · 2026<br>
+introduction to cybersecurity — **cisco** · 2026
+
+<sub>brazil · <a href="https://joao-madureira.vercel.app">portfolio</a></sub>
