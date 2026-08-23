@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" font-family="Consolas,Menlo,Monaco,monospace" width="1120px" height="530px" font-size="15px">
+<svg xmlns="http://www.w3.org/2000/svg" font-family="Consolas,Menlo,Monaco,monospace" width="1120px" height="550px" font-size="15px">
 <style>
 .key { fill: #ffa657; }
 .value { fill: #a5d6ff; }
+.addColor { fill: #3fb950; }
+.delColor { fill: #f85149; }
 .cc { fill: #616e7f; }
 text, tspan { white-space: pre; }
 </style>
-<rect width="1120px" height="530px" fill="#161b22" rx="15"/>
+<rect width="1120px" height="550px" fill="#161b22" rx="15"/>
 <text x="15" y="30" fill="#c9d1d9" class="ascii">
 <tspan x="15" y="30">@@=            .   ........-=++: :    .==+</tspan>
 <tspan x="15" y="50">**=..::............... .:=+*****:       :+</tspan>
@@ -58,7 +60,8 @@ text, tspan { white-space: pre; }
 <tspan x="390" y="430" class="cc">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="cc"> ....................... </tspan><tspan class="value">/in/lucasmadureira0</tspan>
 <tspan x="390" y="450" class="cc">. </tspan><tspan class="key">Location</tspan>:<tspan class="cc"> ....................... </tspan><tspan class="value">Brazil · Remote worldwide</tspan>
 <tspan x="390" y="470">- GitHub Stats ----------------------------------------</tspan>
-<tspan x="390" y="490" class="cc">. </tspan><tspan class="key">Repos</tspan>: <tspan class="value" id="repo_data">15</tspan><tspan class="cc"> ........ </tspan><tspan class="key">Stars</tspan>: <tspan class="value" id="star_data">8</tspan><tspan class="cc"> ........ </tspan><tspan class="key">Followers</tspan>: <tspan class="value" id="follower_data">76</tspan>
-<tspan x="390" y="510" class="cc">. </tspan><tspan class="key">Contributions</tspan>.<tspan class="key">Year</tspan>: <tspan class="value" id="contribution_data">1,090</tspan><tspan class="cc"> .... </tspan><tspan class="key">Updated</tspan>: <tspan class="value" id="updated_data">2026-08-23 22:07 UTC</tspan>
+<tspan x="390" y="490" class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc" id="repo_data_dots"> .... </tspan><tspan class="value" id="repo_data">15</tspan> {<tspan class="key">Contributed</tspan>: <tspan class="value" id="contrib_data">--</tspan>} | <tspan class="key">Stars</tspan>:<tspan class="cc" id="star_data_dots"> ........... </tspan><tspan class="value" id="star_data">8</tspan>
+<tspan x="390" y="510" class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc" id="commit_data_dots"> ................. </tspan><tspan class="value" id="commit_data">--</tspan> | <tspan class="key">Followers</tspan>:<tspan class="cc" id="follower_data_dots"> ....... </tspan><tspan class="value" id="follower_data">76</tspan>
+<tspan x="390" y="530" class="cc">. </tspan><tspan class="key">Lines of Code on GitHub</tspan>:<tspan class="cc" id="loc_data_dots">. </tspan><tspan class="value" id="loc_data">--</tspan> ( <tspan class="addColor" id="loc_add">--</tspan><tspan class="addColor">++</tspan>, <tspan id="loc_del_dots"> </tspan><tspan class="delColor" id="loc_del">--</tspan><tspan class="delColor">--</tspan> )
 </text>
 </svg>
