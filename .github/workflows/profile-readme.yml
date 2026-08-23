@@ -7,8 +7,6 @@ on:
       - feat/profile-readme-terminal
     paths:
       - "update_profile.py"
-      - "dark_mode.svg"
-      - "light_mode.svg"
       - ".github/workflows/profile-readme.yml"
   schedule:
     - cron: "17 */6 * * *"
@@ -24,7 +22,7 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
 
     steps:
       - name: Checkout repository
@@ -37,16 +35,18 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Fetch GitHub stats
+      - name: Refresh GitHub stats
         env:
-          PROFILE_TOKEN: ${{ secrets.PROFILE_TOKEN }}
           GITHUB_TOKEN: ${{ github.token }}
           GITHUB_USERNAME: ${{ github.repository_owner }}
         run: python update_profile.py
 
-      - name: Commit refreshed stats
+      - name: Commit generated profile
         run: |
-          git add dark_mode.svg light_mode.svg cache/profile_stats.json
+          git add dark_mode.svg light_mode.svg
+          if [ -f cache/profile_stats.json ]; then
+            git add cache/profile_stats.json
+          fi
 
           if git diff --cached --quiet; then
             echo "Profile stats are already current."
@@ -55,5 +55,5 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore: refresh GitHub stats"
+          git commit -m "chore: refresh GitHub profile stats"
           git push origin "HEAD:${GITHUB_REF_NAME}"
