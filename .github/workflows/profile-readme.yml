@@ -11,7 +11,7 @@ on:
       - "light_mode.svg"
       - ".github/workflows/profile-readme.yml"
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 permissions:
