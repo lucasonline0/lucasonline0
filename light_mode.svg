@@ -58,7 +58,7 @@ text, tspan { white-space: pre; }
 <tspan x="390" y="430" class="cc">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="cc"> ....................... </tspan><tspan class="value">/in/lucasmadureira0</tspan>
 <tspan x="390" y="450" class="cc">. </tspan><tspan class="key">Location</tspan>:<tspan class="cc"> ....................... </tspan><tspan class="value">Brazil · Remote worldwide</tspan>
 <tspan x="390" y="470">- GitHub Stats ----------------------------------------</tspan>
-<tspan x="390" y="490" class="cc">. </tspan><tspan class="key">Repos</tspan>: <tspan class="value" id="repo_data">--</tspan><tspan class="cc"> ........ </tspan><tspan class="key">Stars</tspan>: <tspan class="value" id="star_data">--</tspan><tspan class="cc"> ........ </tspan><tspan class="key">Followers</tspan>: <tspan class="value" id="follower_data">--</tspan>
-<tspan x="390" y="510" class="cc">. </tspan><tspan class="key">Contributions</tspan>.<tspan class="key">Year</tspan>: <tspan class="value" id="contribution_data">--</tspan><tspan class="cc"> .... </tspan><tspan class="key">Updated</tspan>: <tspan class="value" id="updated_data">--</tspan>
+<tspan x="390" y="490" class="cc">. </tspan><tspan class="key">Repos</tspan>: <tspan class="value" id="repo_data">15</tspan><tspan class="cc"> ........ </tspan><tspan class="key">Stars</tspan>: <tspan class="value" id="star_data">8</tspan><tspan class="cc"> ........ </tspan><tspan class="key">Followers</tspan>: <tspan class="value" id="follower_data">76</tspan>
+<tspan x="390" y="510" class="cc">. </tspan><tspan class="key">Contributions</tspan>.<tspan class="key">Year</tspan>: <tspan class="value" id="contribution_data">1,090</tspan><tspan class="cc"> .... </tspan><tspan class="key">Updated</tspan>: <tspan class="value" id="updated_data">2026-08-23</tspan>
 </text>
 </svg>
