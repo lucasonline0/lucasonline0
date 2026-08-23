@@ -24,7 +24,7 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
 
     steps:
       - name: Checkout repository
@@ -37,15 +37,16 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Fetch live GitHub stats
+      - name: Fetch GitHub stats
         env:
+          PROFILE_TOKEN: ${{ secrets.PROFILE_TOKEN }}
           GITHUB_TOKEN: ${{ github.token }}
           GITHUB_USERNAME: ${{ github.repository_owner }}
         run: python update_profile.py
 
-      - name: Commit refreshed SVGs
+      - name: Commit refreshed stats
         run: |
-          git add dark_mode.svg light_mode.svg
+          git add dark_mode.svg light_mode.svg cache/profile_stats.json
 
           if git diff --cached --quiet; then
             echo "Profile stats are already current."
@@ -54,5 +55,5 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore: refresh live GitHub stats"
+          git commit -m "chore: refresh GitHub stats"
           git push origin "HEAD:${GITHUB_REF_NAME}"
