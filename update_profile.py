@@ -4,11 +4,12 @@ import os
 import re
 import urllib.error
 import urllib.request
-from datetime import datetime, timezone
+from pathlib import Path
 
 USERNAME = os.getenv("GITHUB_USERNAME", "lucasonline0")
-TOKEN = os.getenv("GITHUB_TOKEN", "")
-SVG_FILES = ("dark_mode.svg", "light_mode.svg")
+TOKEN = os.getenv("PROFILE_TOKEN") or os.getenv("GITHUB_TOKEN", "")
+SVG_FILES = (Path("dark_mode.svg"), Path("light_mode.svg"))
+CACHE_FILE = Path("cache/profile_stats.json")
 
 HEADERS = {
     "Accept": "application/vnd.github+json",
@@ -22,75 +23,193 @@ if TOKEN:
 def request_json(url, data=None, headers=None):
     req = urllib.request.Request(url, data=data, headers=headers or HEADERS)
     try:
-        with urllib.request.urlopen(req, timeout=30) as response:
+        with urllib.request.urlopen(req, timeout=60) as response:
             return json.loads(response.read().decode("utf-8"))
     except urllib.error.HTTPError as exc:
         body = exc.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"GitHub API returned HTTP {exc.code}: {body}") from exc
+        raise RuntimeError(f"GitHub API HTTP {exc.code}: {body}") from exc
 
 
-def public_stats():
-    """Return public repository count, total stars on owned public repos, and followers."""
-    profile = request_json(f"https://api.github.com/users/{USERNAME}")
-    repos = int(profile.get("public_repos", 0))
-    followers = int(profile.get("followers", 0))
-
-    stars = 0
-    page = 1
-    while True:
-        batch = request_json(
-            f"https://api.github.com/users/{USERNAME}/repos"
-            f"?type=owner&sort=updated&per_page=100&page={page}"
-        )
-        stars += sum(int(repo.get("stargazers_count", 0)) for repo in batch)
-        if len(batch) < 100:
-            break
-        page += 1
-
-    return repos, stars, followers
-
-
-def yearly_contributions():
-    """Return GitHub contribution-calendar total for the current UTC year."""
+def graphql(query, variables=None):
     if not TOKEN:
-        raise RuntimeError("GITHUB_TOKEN is required for contribution stats")
+        raise RuntimeError("A GitHub token is required")
+    payload = json.dumps({"query": query, "variables": variables or {}}).encode("utf-8")
+    headers = dict(HEADERS)
+    headers["Content-Type"] = "application/json"
+    body = request_json("https://api.github.com/graphql", data=payload, headers=headers)
+    if body.get("errors"):
+        raise RuntimeError(json.dumps(body["errors"]))
+    return body["data"]
 
-    now = datetime.now(timezone.utc)
-    start = datetime(now.year, 1, 1, tzinfo=timezone.utc)
+
+def get_user():
     query = """
-    query($login: String!, $from: DateTime!, $to: DateTime!) {
+    query($login: String!) {
       user(login: $login) {
-        contributionsCollection(from: $from, to: $to) {
-          contributionCalendar {
-            totalContributions
+        id
+        followers { totalCount }
+      }
+    }
+    """
+    return graphql(query, {"login": USERNAME})["user"]
+
+
+def get_repositories(owner_affiliations):
+    query = """
+    query($login: String!, $affiliations: [RepositoryAffiliation], $cursor: String) {
+      user(login: $login) {
+        repositories(
+          first: 100,
+          after: $cursor,
+          ownerAffiliations: $affiliations,
+          orderBy: {field: UPDATED_AT, direction: DESC}
+        ) {
+          totalCount
+          edges {
+            node {
+              nameWithOwner
+              isFork
+              stargazers { totalCount }
+              defaultBranchRef {
+                target {
+                  ... on Commit {
+                    history { totalCount }
+                  }
+                }
+              }
+            }
+          }
+          pageInfo { endCursor hasNextPage }
+        }
+      }
+    }
+    """
+
+    edges = []
+    cursor = None
+    total_count = 0
+    while True:
+        data = graphql(
+            query,
+            {"login": USERNAME, "affiliations": owner_affiliations, "cursor": cursor},
+        )["user"]["repositories"]
+        total_count = int(data["totalCount"])
+        edges.extend(data["edges"])
+        if not data["pageInfo"]["hasNextPage"]:
+            break
+        cursor = data["pageInfo"]["endCursor"]
+    return total_count, edges
+
+
+def get_authored_history(owner, repo, author_id):
+    query = """
+    query($owner: String!, $repo: String!, $authorId: ID!, $cursor: String) {
+      repository(owner: $owner, name: $repo) {
+        defaultBranchRef {
+          target {
+            ... on Commit {
+              history(first: 100, after: $cursor, author: {id: $authorId}) {
+                edges {
+                  node { additions deletions }
+                }
+                pageInfo { endCursor hasNextPage }
+              }
+            }
           }
         }
       }
     }
     """
-    payload = json.dumps(
-        {
-            "query": query,
-            "variables": {
-                "login": USERNAME,
-                "from": start.isoformat().replace("+00:00", "Z"),
-                "to": now.isoformat().replace("+00:00", "Z"),
-            },
-        }
-    ).encode("utf-8")
 
-    headers = dict(HEADERS)
-    headers["Content-Type"] = "application/json"
-    body = request_json("https://api.github.com/graphql", data=payload, headers=headers)
+    commits = additions = deletions = 0
+    cursor = None
+    while True:
+        data = graphql(
+            query,
+            {"owner": owner, "repo": repo, "authorId": author_id, "cursor": cursor},
+        )["repository"]
+        if not data or not data.get("defaultBranchRef"):
+            return 0, 0, 0
+        history = data["defaultBranchRef"]["target"]["history"]
+        for edge in history["edges"]:
+            commits += 1
+            additions += int(edge["node"]["additions"])
+            deletions += int(edge["node"]["deletions"])
+        if not history["pageInfo"]["hasNextPage"]:
+            break
+        cursor = history["pageInfo"]["endCursor"]
+    return commits, additions, deletions
 
-    if body.get("errors"):
-        raise RuntimeError(json.dumps(body["errors"]))
 
-    return int(
-        body["data"]["user"]["contributionsCollection"]["contributionCalendar"][
-            "totalContributions"
-        ]
+def load_cache():
+    try:
+        return json.loads(CACHE_FILE.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {"repos": {}}
+
+
+def save_cache(cache):
+    CACHE_FILE.parent.mkdir(parents=True, exist_ok=True)
+    CACHE_FILE.write_text(
+        json.dumps(cache, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
     )
+
+
+def calculate_commit_and_loc_stats(repo_edges, author_id):
+    cache = load_cache()
+    old_repos = cache.get("repos", {})
+    new_repos = {}
+
+    for edge in repo_edges:
+        node = edge["node"]
+        name_with_owner = node["nameWithOwner"]
+        branch = node.get("defaultBranchRef")
+        total_history = 0
+        if branch and branch.get("target") and branch["target"].get("history"):
+            total_history = int(branch["target"]["history"]["totalCount"])
+
+        cached = old_repos.get(name_with_owner)
+        if cached and int(cached.get("history_total", -1)) == total_history:
+            new_repos[name_with_owner] = cached
+            continue
+
+        owner, repo = name_with_owner.split("/", 1)
+        commits, additions, deletions = get_authored_history(owner, repo, author_id)
+        new_repos[name_with_owner] = {
+            "history_total": total_history,
+            "commits": commits,
+            "additions": additions,
+            "deletions": deletions,
+        }
+
+    cache = {"repos": new_repos}
+    save_cache(cache)
+
+    commits = sum(int(v.get("commits", 0)) for v in new_repos.values())
+    additions = sum(int(v.get("additions", 0)) for v in new_repos.values())
+    deletions = sum(int(v.get("deletions", 0)) for v in new_repos.values())
+    return commits, additions, deletions
+
+
+def current_svg_values():
+    try:
+        svg = SVG_FILES[0].read_text(encoding="utf-8")
+    except OSError:
+        return {}
+    values = {}
+    for element_id in (
+        "repo_data", "contrib_data", "star_data", "commit_data",
+        "follower_data", "loc_data", "loc_add", "loc_del",
+    ):
+        match = re.search(
+            rf'<tspan[^>]*id="{re.escape(element_id)}"[^>]*>(.*?)</tspan>',
+            svg,
+            flags=re.DOTALL,
+        )
+        if match:
+            values[element_id] = match.group(1)
+    return values
 
 
 def replace_tspan(svg, element_id, value):
@@ -107,69 +226,79 @@ def replace_tspan(svg, element_id, value):
     return updated
 
 
-def current_tspan_value(svg, element_id):
-    pattern = rf'<tspan[^>]*id="{re.escape(element_id)}"[^>]*>(.*?)</tspan>'
-    match = re.search(pattern, svg, flags=re.DOTALL)
-    return match.group(1) if match else "--"
+def dot_string(value, width):
+    text = str(value)
+    missing = max(0, width - len(text))
+    if missing == 0:
+        return ""
+    if missing == 1:
+        return " "
+    if missing == 2:
+        return ". "
+    return " " + ("." * missing) + " "
 
 
-def update_svg(path, values):
-    with open(path, "r", encoding="utf-8") as handle:
-        svg = handle.read()
+def update_svg(path, stats):
+    svg = path.read_text(encoding="utf-8")
+    formatted = {
+        key: f"{value:,}" if isinstance(value, int) else str(value)
+        for key, value in stats.items()
+    }
 
-    for element_id, value in values.items():
-        if value is not None:
-            svg = replace_tspan(svg, element_id, value)
+    dot_values = {
+        "repo_data_dots": dot_string(formatted["repo_data"], 6),
+        "star_data_dots": dot_string(formatted["star_data"], 14),
+        "commit_data_dots": dot_string(formatted["commit_data"], 22),
+        "follower_data_dots": dot_string(formatted["follower_data"], 10),
+        "loc_data_dots": dot_string(formatted["loc_data"], 9),
+        "loc_del_dots": dot_string(formatted["loc_del"], 7),
+    }
 
-    with open(path, "w", encoding="utf-8") as handle:
-        handle.write(svg)
+    for element_id, value in {**formatted, **dot_values}.items():
+        svg = replace_tspan(svg, element_id, value)
 
-
-def old_value(element_id):
-    """Keep the last known good value if one API endpoint temporarily fails."""
-    try:
-        with open(SVG_FILES[0], "r", encoding="utf-8") as handle:
-            return current_tspan_value(handle.read(), element_id)
-    except OSError:
-        return "--"
+    path.write_text(svg, encoding="utf-8")
 
 
 def main():
-    values = {}
-
+    previous = current_svg_values()
     try:
-        repos, stars, followers = public_stats()
-        values.update(
-            {
-                "repo_data": f"{repos:,}",
-                "star_data": f"{stars:,}",
-                "follower_data": f"{followers:,}",
-            }
+        user = get_user()
+        repo_count, owner_edges = get_repositories(["OWNER"])
+        contributed_count, all_edges = get_repositories(
+            ["OWNER", "COLLABORATOR", "ORGANIZATION_MEMBER"]
         )
-    except Exception as exc:
-        print(f"Public stats lookup failed; keeping previous values: {exc}")
-        values.update(
-            {
-                "repo_data": old_value("repo_data"),
-                "star_data": old_value("star_data"),
-                "follower_data": old_value("follower_data"),
-            }
-        )
+        stars = sum(int(edge["node"]["stargazers"]["totalCount"]) for edge in owner_edges)
+        commits, additions, deletions = calculate_commit_and_loc_stats(all_edges, user["id"])
 
-    try:
-        contributions = yearly_contributions()
-        values["contribution_data"] = f"{contributions:,}"
+        stats = {
+            "repo_data": repo_count,
+            "contrib_data": contributed_count,
+            "star_data": stars,
+            "commit_data": commits,
+            "follower_data": int(user["followers"]["totalCount"]),
+            "loc_data": additions - deletions,
+            "loc_add": additions,
+            "loc_del": deletions,
+        }
     except Exception as exc:
-        print(f"Contribution lookup failed; keeping previous value: {exc}")
-        values["contribution_data"] = old_value("contribution_data")
-
-    values["updated_data"] = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+        print(f"Live stats refresh failed; keeping last generated values: {exc}")
+        stats = {
+            "repo_data": previous.get("repo_data", "--"),
+            "contrib_data": previous.get("contrib_data", "--"),
+            "star_data": previous.get("star_data", "--"),
+            "commit_data": previous.get("commit_data", "--"),
+            "follower_data": previous.get("follower_data", "--"),
+            "loc_data": previous.get("loc_data", "--"),
+            "loc_add": previous.get("loc_add", "--"),
+            "loc_del": previous.get("loc_del", "--"),
+        }
 
     for svg_file in SVG_FILES:
-        update_svg(svg_file, values)
+        update_svg(svg_file, stats)
 
-    print("Updated profile stats:")
-    for key, value in values.items():
+    print("GitHub profile stats:")
+    for key, value in stats.items():
         print(f"  {key}: {value}")
 
 
