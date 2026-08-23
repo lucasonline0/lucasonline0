@@ -7,6 +7,8 @@ on:
       - feat/profile-readme-terminal
     paths:
       - "update_profile.py"
+      - "dark_mode.svg"
+      - "light_mode.svg"
       - ".github/workflows/profile-readme.yml"
   schedule:
     - cron: "17 */6 * * *"
