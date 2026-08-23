@@ -1,7 +1,4 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://neofetch-profile.vercel.app/api?username=lucasonline0&theme=github-dark">
-  <img alt="Lucas Madureira GitHub profile stats" src="https://neofetch-profile.vercel.app/api?username=lucasonline0&theme=github-light" width="100%">
-</picture>
+<img src="https://joao-madureira.vercel.app/api/github-stats" alt="Lucas Madureira live GitHub stats" width="100%" />
 
 ## Lucas Madureira
 
