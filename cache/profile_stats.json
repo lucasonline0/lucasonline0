@@ -31,34 +31,34 @@
       "head_oid": "6ae303bd90618ebb0637e96dfb919f3987d7a28d"
     },
     "lucasonline0/Avaliacao-Candidatos-PSS-SEDUC": {
-      "additions": 34843,
-      "commits": 83,
+      "additions": 34861,
+      "commits": 85,
       "deletions": 2689,
-      "head_oid": "826ce114cfdc5fc7025a19166faea9ec8651db34"
+      "head_oid": "5e77692f82555a7a5e232fc49114f6b69351d617"
     },
     "lucasonline0/CENSO-Operacional-Escolas": {
-      "additions": 87486,
-      "commits": 298,
+      "additions": 87504,
+      "commits": 300,
       "deletions": 16225,
-      "head_oid": "290739f34d4d13859acb511699f01fba76b8c1c3"
+      "head_oid": "792bf4a10c80c3960fb2e81a373ce33faecb0cd7"
     },
     "lucasonline0/Cloud-Native-Hardened-IaC": {
-      "additions": 768,
-      "commits": 12,
-      "deletions": 23,
-      "head_oid": "f15dcd52b474ee46f59b3367cdfe465317b946f6"
+      "additions": 788,
+      "commits": 15,
+      "deletions": 25,
+      "head_oid": "9b03538a9725f1039cafa5effac2fa500f4ea06e"
     },
     "lucasonline0/Desktop-Password-Vault": {
-      "additions": 11280,
-      "commits": 31,
-      "deletions": 889,
-      "head_oid": "4da9b0f138590648867791e640410ab4c8ea6c29"
+      "additions": 11300,
+      "commits": 34,
+      "deletions": 891,
+      "head_oid": "b75956d6f731eb50a2dced407232b98d1c547cbe"
     },
     "lucasonline0/GoSpector": {
-      "additions": 2346,
-      "commits": 8,
+      "additions": 2364,
+      "commits": 10,
       "deletions": 498,
-      "head_oid": "a0d5e6e9ffbe4e501cc7431d888bb03576552dfb"
+      "head_oid": "f9d893f798139c34c54d46d1e9416855819e7798"
     },
     "lucasonline0/Unit-3": {
       "additions": 0,
@@ -67,34 +67,16 @@
       "head_oid": "515b07da594754a23cdb5213f08c07857fa67f9c"
     },
     "lucasonline0/WAF-Proxy": {
-      "additions": 2312,
-      "commits": 13,
+      "additions": 2330,
+      "commits": 15,
       "deletions": 674,
-      "head_oid": "fc4ee6c1ce5bb859a28906cdd59b927a1260889b"
-    },
-    "lucasonline0/about": {
-      "additions": 4016,
-      "commits": 6,
-      "deletions": 1002,
-      "head_oid": "ac650af7e5a17bb9f972eb35afe6a13646034943"
-    },
-    "lucasonline0/kindleforge": {
-      "additions": 9036,
-      "commits": 16,
-      "deletions": 230,
-      "head_oid": "e8ba2fccb7d5edffdef8a6773d571ac706d8304a"
-    },
-    "lucasonline0/landing-page-showcase": {
-      "additions": 419,
-      "commits": 19,
-      "deletions": 2,
-      "head_oid": "fc71eacd542052defab0df77cb4e76b21829b830"
+      "head_oid": "8f932d9f18b6084b6f67e5bc9dd3bd59053f9338"
     },
     "lucasonline0/lucasonline0": {
-      "additions": 2376,
-      "commits": 65,
-      "deletions": 1282,
-      "head_oid": "4abe8aad75c7b141d2e78765f64606a7a972d551"
+      "additions": 2392,
+      "commits": 66,
+      "deletions": 1289,
+      "head_oid": "10ada547b1c7339b0de9764dab982ede05758bd8"
     },
     "lucasonline0/nuclei": {
       "additions": 0,
@@ -103,22 +85,10 @@
       "head_oid": "a3f1367fcd98ee13f23747e71d98d38a55e62720"
     },
     "lucasonline0/opl-linux-toolbox": {
-      "additions": 8611,
-      "commits": 38,
+      "additions": 8631,
+      "commits": 40,
       "deletions": 5228,
-      "head_oid": "c1c706439b0ec34427f60a55c91d1ec6bfde4dc8"
-    },
-    "lucasonline0/orbitdb-storacha-bridge": {
-      "additions": 0,
-      "commits": 0,
-      "deletions": 0,
-      "head_oid": "98631a3562deb3edfc697513072be4c22c9db915"
-    },
-    "lucasonline0/projetos-seduc": {
-      "additions": 8709,
-      "commits": 46,
-      "deletions": 7387,
-      "head_oid": "43e87383edf099f45f9121570e9c9cafb9bf436c"
+      "head_oid": "3a776d143e3c877fa70523989160d99c51a8d22e"
     },
     "projectdiscovery/nuclei": {
       "additions": 35,
