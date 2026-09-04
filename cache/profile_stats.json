@@ -76,7 +76,7 @@
       "additions": 2392,
       "commits": 66,
       "deletions": 1289,
-      "head_oid": "6dd12cc41cfa6fb2512844a19bb2a1272a04eec9"
+      "head_oid": "7a3c4a21d5128123a23b534fbc1b5e3c5d91f5ab"
     },
     "lucasonline0/nuclei": {
       "additions": 0,
@@ -91,10 +91,10 @@
       "head_oid": "3a776d143e3c877fa70523989160d99c51a8d22e"
     },
     "projectdiscovery/nuclei": {
-      "additions": 35,
-      "commits": 1,
-      "deletions": 0,
-      "head_oid": "fe7b1df128b87e97c4007e33c9f83f103a3dfa82"
+      "additions": 96,
+      "commits": 3,
+      "deletions": 2,
+      "head_oid": "911c2303fe219afe677503136f679bdb22d292fa"
     }
   }
 }
