@@ -1,0 +1,38 @@
+name: Install resumes
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.cvchunks/**'
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build resume PDFs
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets
+          cat .cvchunks/part-* | base64 -d > assets/Lucas-Madureira-CV-PT-BR.pdf
+          echo "852b5bcf96b208eaf8f13c72bee524e67cc568bbc967565b2a764a2068102a27  assets/Lucas-Madureira-CV-PT-BR.pdf" | sha256sum -c -
+          cp assets/Lucas-Madureira-CV-PT-BR.pdf assets/Lucas-Madureira-CV-EN.pdf
+          rm -rf .cvchunks
+
+      - name: Commit generated resumes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "docs: add downloadable resumes"
+          git push

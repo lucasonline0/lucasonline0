@@ -1,6 +1,6 @@
 # Lucas Madureira
 
-**Software Engineer · Backend & Security**
+**Software Developer · Backend & Security**
 
 I build secure backend systems, developer tools, and infrastructure using **Go, TypeScript, Rust, PostgreSQL, and Linux**.
 
@@ -12,5 +12,9 @@ I build secure backend systems, developer tools, and infrastructure using **Go, 
 * [GoSpector](https://github.com/lucasonline0/GoSpector) — Go, networking, reconnaissance
 
 `Go` · `TypeScript` · `Rust` · `PostgreSQL` · `Linux` · `Docker`
+
+### Resume
+
+[Português (PT-BR)](./assets/Lucas-Madureira-CV-PT-BR.pdf) · [English](./assets/Lucas-Madureira-CV-EN.pdf)
 
 [Portfolio](https://joao-madureira.vercel.app)
