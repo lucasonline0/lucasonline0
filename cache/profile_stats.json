@@ -37,10 +37,10 @@
       "head_oid": "5e77692f82555a7a5e232fc49114f6b69351d617"
     },
     "lucasonline0/CENSO-Operacional-Escolas": {
-      "additions": 137354,
-      "commits": 448,
-      "deletions": 26810,
-      "head_oid": "784d0ad9057e2f480e5374d6eb227b5208c186c7"
+      "additions": 137433,
+      "commits": 451,
+      "deletions": 27434,
+      "head_oid": "4da21613ae648dd4802afdadeb8462d1d6a08c77"
     },
     "lucasonline0/Cloud-Native-Hardened-IaC": {
       "additions": 788,
@@ -82,7 +82,7 @@
       "additions": 2444,
       "commits": 67,
       "deletions": 1290,
-      "head_oid": "4f0d96e445d34d332a4d5c993e3eff459544b502"
+      "head_oid": "396a24db15488687d854711dc9c0bd62277b2caa"
     },
     "lucasonline0/nuclei": {
       "additions": 0,
