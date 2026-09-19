@@ -12,12 +12,6 @@
       "deletions": 537,
       "head_oid": "aa976f7b7e44c94d23e1642676be1a75e401b05f"
     },
-    "amazonext/about": {
-      "additions": 421,
-      "commits": 3,
-      "deletions": 1,
-      "head_oid": "dc56fe53ac347a964c8d9648b890ce96d4ff313f"
-    },
     "amazonext/about-brc": {
       "additions": 463,
       "commits": 2,
@@ -82,7 +76,7 @@
       "additions": 2444,
       "commits": 67,
       "deletions": 1290,
-      "head_oid": "ad7c00dfde94363c433be429a05311170f3aaf6d"
+      "head_oid": "7a2e2cdef89f3b8429374f07577663bc3cb19afe"
     },
     "lucasonline0/nuclei": {
       "additions": 0,
