@@ -76,7 +76,7 @@
       "additions": 2444,
       "commits": 67,
       "deletions": 1290,
-      "head_oid": "13ee05a6802223368d83c05ccded01e367f2a4a7"
+      "head_oid": "e39f4d2fb56dcb830436470c089dcc6ffac0adef"
     },
     "lucasonline0/nuclei": {
       "additions": 0,
@@ -89,6 +89,12 @@
       "commits": 40,
       "deletions": 5228,
       "head_oid": "3a776d143e3c877fa70523989160d99c51a8d22e"
+    },
+    "lucasonline0/server-amigos": {
+      "additions": 2,
+      "commits": 1,
+      "deletions": 0,
+      "head_oid": "7bae1983859097a111af3597a9eaac31eb5fba07"
     },
     "projectdiscovery/nuclei": {
       "additions": 96,
