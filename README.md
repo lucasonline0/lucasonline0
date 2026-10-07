@@ -19,9 +19,6 @@ Currently working on production systems for **SEDUC-PA**, with experience across
 
 ## Security & systems projects
 
-- [BallotSec Lab](https://github.com/lucasonline0/ballotsec-lab) — **Go · Next.js · PostgreSQL · OpenAPI**  
-  Experimental lab for integrity, auditability, tamper detection, reproducible simulations, evidence verification, and controlled mutation testing.
-
 - [WAF-Proxy](https://github.com/lucasonline0/WAF-Proxy) — **Rust · Lua · Prometheus**  
   Defensive reverse proxy with bounded request inspection, anomaly scoring, hardened forwarding, rate limiting, tracing, and metrics.
 
