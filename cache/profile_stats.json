@@ -54,12 +54,6 @@
       "deletions": 498,
       "head_oid": "f9d893f798139c34c54d46d1e9416855819e7798"
     },
-    "lucasonline0/OneDay": {
-      "additions": 15,
-      "commits": 1,
-      "deletions": 0,
-      "head_oid": "30eb67aeb933c08124e0b2c26ec72679546cb66c"
-    },
     "lucasonline0/Unit-3": {
       "additions": 0,
       "commits": 0,
@@ -72,35 +66,17 @@
       "deletions": 674,
       "head_oid": "8f932d9f18b6084b6f67e5bc9dd3bd59053f9338"
     },
-    "lucasonline0/ballotsec-lab": {
-      "additions": 27687,
-      "commits": 20,
-      "deletions": 4025,
-      "head_oid": "76fef5861a46a2376df9c07f153699c24f926fc1"
-    },
     "lucasonline0/lucasonline0": {
-      "additions": 2444,
-      "commits": 67,
-      "deletions": 1290,
-      "head_oid": "74d3a09234f3955eae9251af60f9028c574b7094"
-    },
-    "lucasonline0/nuclei": {
-      "additions": 0,
-      "commits": 0,
-      "deletions": 0,
-      "head_oid": "a3f1367fcd98ee13f23747e71d98d38a55e62720"
+      "additions": 2477,
+      "commits": 69,
+      "deletions": 1304,
+      "head_oid": "63bc8ddfa545bf62e3534c2c44480e4b1dc02813"
     },
     "lucasonline0/opl-linux-toolbox": {
       "additions": 8631,
       "commits": 40,
       "deletions": 5228,
       "head_oid": "3a776d143e3c877fa70523989160d99c51a8d22e"
-    },
-    "lucasonline0/server-amigos": {
-      "additions": 2,
-      "commits": 1,
-      "deletions": 0,
-      "head_oid": "7bae1983859097a111af3597a9eaac31eb5fba07"
     },
     "projectdiscovery/nuclei": {
       "additions": 96,
