@@ -1,11 +1,5 @@
 {
   "repos": {
-    "FADEP-PA/SADEP": {
-      "additions": 119967,
-      "commits": 355,
-      "deletions": 33893,
-      "head_oid": "4dca515502629792e5fcc4b80e6f237f114e961e"
-    },
     "amazonext/LogFlux": {
       "additions": 1930,
       "commits": 20,
@@ -70,7 +64,7 @@
       "additions": 2477,
       "commits": 69,
       "deletions": 1304,
-      "head_oid": "2c7efa93a2735259a0fbb2a174e6ffd331e80688"
+      "head_oid": "a8c54e38889315d3e542105e3b33e7099801baf9"
     },
     "lucasonline0/opl-linux-toolbox": {
       "additions": 8631,
@@ -82,7 +76,7 @@
       "additions": 96,
       "commits": 3,
       "deletions": 2,
-      "head_oid": "a5715288aa7e405dcff8ab458de541f8d99ceac0"
+      "head_oid": "a151a1d54fad0d5ef71f01662b0bb3955a98c7c5"
     }
   }
 }
