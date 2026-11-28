@@ -6,18 +6,6 @@
       "deletions": 537,
       "head_oid": "aa976f7b7e44c94d23e1642676be1a75e401b05f"
     },
-    "amazonext/about-brc": {
-      "additions": 463,
-      "commits": 2,
-      "deletions": 2,
-      "head_oid": "208941ac05d373b2a8cedddc0b07a0eb3cf54a68"
-    },
-    "amazonext/reserva-inteligente-semcult": {
-      "additions": 342,
-      "commits": 10,
-      "deletions": 150,
-      "head_oid": "6ae303bd90618ebb0637e96dfb919f3987d7a28d"
-    },
     "lucasonline0/Avaliacao-Candidatos-PSS-SEDUC": {
       "additions": 34861,
       "commits": 85,
@@ -70,7 +58,7 @@
       "additions": 2477,
       "commits": 69,
       "deletions": 1304,
-      "head_oid": "312638d9d4245110d233ea4b576a8e7d5a09c02e"
+      "head_oid": "5e5b21ead788555ec94eb02013382fc8ff8d8799"
     },
     "lucasonline0/opl-linux-toolbox": {
       "additions": 8631,
